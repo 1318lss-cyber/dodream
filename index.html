@@ -234,46 +234,18 @@
   </section>
 
   <div class="save-wrap">
-    <button class="btn-save" id="saveBtn" type="button">
+    <a class="btn-save" href="dodream.vcf" download="DODREAM_LeeSungShin.vcf" style="text-decoration:none;">
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       연락처 저장하기
-    </button>
+    </a>
     <p class="footer">
       <b>두드림모터스</b> · 광주 · 전남 · 전북 · 전국 거래<br>
       정직한 차량 정보 공개 원칙
     </p>
   </div>
 
-  <div class="toast" id="toast">연락처 파일이 저장되었습니다</div>
 </main>
 
-<script>
-// 연락처 저장용 vCard
-const VCARD = `BEGIN:VCARD
-VERSION:3.0
-N:이;성신;;;
-FN:이성신
-ORG:두드림모터스 (DODREAM MOTORS)
-TITLE:대표딜러
-TEL;TYPE=CELL:010-4943-9727
-URL:https://blog.naver.com/019601lss
-ADR;TYPE=WORK:;;서구 매월1로 62번길 12 비동 112호;광주광역시;;;대한민국
-NOTE:믿을 수 있는 중고차, 꿈을 두드리는 첫걸음 - 호남 전 지역 무료 탁송, 전국 거래
-END:VCARD`;
 
-document.getElementById('saveBtn').addEventListener('click', () => {
-  const blob = new Blob([VCARD], {type:'text/vcard;charset=utf-8'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'DODREAM_LeeSungShin.vcf';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(a.href);
-  const t = document.getElementById('toast');
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2200);
-});
-</script>
 </body>
 </html>
