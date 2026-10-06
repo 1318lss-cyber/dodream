@@ -153,6 +153,12 @@
     -webkit-tap-highlight-color:transparent;
   }
   .btn-save:active{transform:scale(.97);background:rgba(201,164,92,.1);}
+  @keyframes savePulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(201,164,92,.55);border-color:var(--gold);}
+    50%{box-shadow:0 0 0 9px rgba(201,164,92,0);border-color:#E8C57E;}
+  }
+  .btn-save{animation:savePulse 2s ease-in-out infinite;}
+  @media (prefers-reduced-motion:reduce){.btn-save{animation:none;}}
   .btn-save:focus-visible{outline:3px solid var(--ink);outline-offset:2px;}
   .footer{
     text-align:center;margin-top:12px;
@@ -205,7 +211,7 @@
   <section class="links">
     <p class="links-label">Channels</p>
 
-    <a class="link-row" href="https://blog.naver.com/019601lss" target="_blank" rel="noopener">
+    <a class="link-row" href="https://blog.naver.com/1318lss" target="_blank" rel="noopener">
       <span class="link-icon ic-blog" aria-hidden="true">N</span>
       <span class="link-txt">
         <strong>네이버 블로그</strong>
